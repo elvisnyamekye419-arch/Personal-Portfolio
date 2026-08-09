@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elvis Nyamekye — Developer · Journalist · Advocate</title>
+<meta name="description" content="Portfolio of Elvis Nyamekye — Front-End Developer, Student Journalist at Radio Grin 94.7, and Mental Health Advocate.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,500;1,6..72,600&family=Courier+Prime:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="navbar" id="navbar">
+  <a href="#hero" class="logo">EN<span class="logo-dot"></span></a>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#hero">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#focus">Focus</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#journey">Journey</a></li>
+    <li><a href="#contact" class="nav-cta">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header id="hero" class="hero">
+  <div class="manuscript-field" aria-hidden="true"></div>
+  <div class="press-stamp" aria-hidden="true">PRESS</div>
+
+  <div class="hero-inner">
+    <p class="eyebrow"><span class="status-dot"></span> FIELD NOTES · UDS NYANKPALA · VOL. 01</p>
+
+    <h1 class="hero-title">
+      Elvis Nyamekye
+    </h1>
+
+    <p class="hero-role">
+      <span class="role-label">Currently on the desk:</span>
+      <span class="role-cycle" id="roleCycle">Front-End Developer</span><span class="type-cursor">|</span>
+    </p>
+
+    <p class="hero-tagline">
+      I build interfaces, report stories, and advocate for mental health — three
+      beats, one byline: <em>communication that reaches people.</em>
+    </p>
+
+    <div class="cta-btns">
+      <a href="#contact" class="btn primary">Let's Connect</a>
+      <a href="#projects" class="btn ghost">See the Work</a>
+    </div>
+  </div>
+
+  <a href="#about" class="scroll-cue" aria-label="Scroll to About">
+    <span></span>
+  </a>
+</header>
+
+<!-- ============ ABOUT ============ -->
+<section id="about" class="container about-section">
+  <div class="section-head">
+    <span class="eyebrow dark">Dateline</span>
+    <h2 class="section-title">About Me</h2>
+  </div>
+
+  <div class="about-grid">
+    <div class="about-portrait">
+      
+      <div class="image-slot portrait" data-label="Add your photo — images/profile.jpg">
+        <img src="elvis.jpg" alt="Elvis Nyamekye" onerror="this.style.display='none'; this.parentElement.classList.add('img-missing')">
+      </div>
+      <div class="portrait-tag">
+        <i class="fa-solid fa-graduation-cap"></i>
+        <span>BSc. Computer Science, UDS Nyankpala</span>
+      </div>
+    </div>
+
+    <div class="about-text">
+      <p class="lede">I wear multiple hats, but they all share a common goal:
+        <strong>communication and impact.</strong></p>
+
+      <p>I'm a <strong>Computer Science student, Front-End Developer, Student
+        Journalist, Public Speaker,</strong> and <strong>Mental Health Advocate</strong>
+        pursuing my degree at the <strong>University for Development Studies (UDS),
+        Nyankpala Campus</strong> — passionate about using technology, communication,
+        and creativity to make a meaningful impact.</p>
+
+      <p>As a <strong>Student Journalist</strong>, I'm dedicated to storytelling and
+        uncovering the narratives that shape my community. That same drive to share
+        information led me to <strong>mental health advocacy</strong>, where I work to
+        break stigma and give a platform to voices that often go unheard.</p>
+
+      <p>Parallel to my media work, I'm a <strong>Front-End Developer.</strong>
+        I view code as another form of storytelling — building accessible, clean,
+        and engaging digital spaces that help people find the information and
+        support they need.</p>
+
+      <blockquote class="pull-quote">
+        "I'm a developer who builds, a journalist who tells stories, and an
+        advocate who believes people deserve to be heard."
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<div class="torn-divider torn-divider--down" aria-hidden="true"></div>
+
+<!-- ============ FOCUS / SKILLS ============ -->
+<section id="focus" class="focus-section">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow dark">The Desks</span>
+      <h2 class="section-title">Where I Show Up</h2>
+      <p class="section-sub">Pick a desk to see what's filed under it.</p>
+    </div>
+
+    <div class="desk-tabs" id="deskTabs" role="tablist">
+      <button class="desk-tab is-active" data-target="dev" role="tab" aria-selected="true">
+        <span class="desk-no">No. 01</span><span>Tech Desk</span>
+      </button>
+      <button class="desk-tab" data-target="media" role="tab" aria-selected="false">
+        <span class="desk-no">No. 02</span><span>Newsroom</span>
+      </button>
+      <button class="desk-tab" data-target="advocacy" role="tab" aria-selected="false">
+        <span class="desk-no">No. 03</span><span>Wellness Desk</span>
+      </button>
+    </div>
+
+    <div class="desk-panels">
+      <div class="desk-panel is-active" id="dev">
+        <div class="skill-card">
+          <i class="fa-solid fa-laptop-code"></i>
+          <h3>Front-End Development</h3>
+          <p>HTML5, CSS3, JavaScript, Responsive Design, Git &amp; GitHub</p>
+        </div>
+        <div class="skill-card">
+          <i class="fa-solid fa-layer-group"></i>
+          <h3>Tools</h3>
+          <p>VS Code, Digital Media Platforms</p>
+        </div>
+        <div class="skill-card">
+          <i class="fa-solid fa-server"></i>
+          <h3>Currently Learning</h3>
+          <p>Python, SQL &amp; MySQL, backend development, APIs, cybersecurity, AI</p>
+        </div>
+      </div>
+
+      <div class="desk-panel" id="media">
+        <div class="skill-card">
+          <i class="fa-solid fa-pen-nib"></i>
+          <h3>Reporting &amp; Presenting</h3>
+          <p>News writing, presenting, interviewing, storytelling — Radio Grin 94.7 MHz, UDS Nyankpala</p>
+        </div>
+        <div class="skill-card">
+          <i class="fa-solid fa-share-nodes"></i>
+          <h3>Production &amp; Socials</h3>
+          <p>Media production, social media management, content creation</p>
+        </div>
+        <div class="skill-card">
+          <i class="fa-solid fa-people-group"></i>
+          <h3>Under Pressure</h3>
+          <p>Public speaking, live presenting, working to deadline</p>
+        </div>
+      </div>
+
+      <div class="desk-panel" id="advocacy">
+        <div class="skill-card">
+          <i class="fa-solid fa-heart-pulse"></i>
+          <h3>The Nyamekye Initiative</h3>
+          <p>Mental health awareness, suicide prevention, emotional wellbeing conversations</p>
+        </div>
+        <div class="skill-card">
+          <i class="fa-solid fa-comments"></i>
+          <h3>Stigma Reduction</h3>
+          <p>Encouraging people to seek help and reminding them asking for help isn't weakness</p>
+        </div>
+        <div class="skill-card">
+          <i class="fa-solid fa-hand-holding-heart"></i>
+          <h3>Community Support</h3>
+          <p>Platforms and conversations for people silently struggling — "Are you okay?"</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section id="projects" class="projects-section">
+  <div class="container">
+    <div class="section-head light">
+      <span class="eyebrow">Clippings</span>
+      <h2 class="section-title light">Projects</h2>
+      <p class="section-sub light">A few things I've built.</p>
+    </div>
+
+    <div class="projects-grid">
+
+      <article class="project-card">
+        <div class="image-slot project-img" data-label="Add screenshot — images/project-1.jpg">
+          <img src="the.PNG" alt="Project one preview" onerror="this.style.display='none'; this.parentElement.classList.add('img-missing')">
+        </div>
+        <div class="project-body">
+          <span class="project-tag">Community &amp; Advocacy</span>
+          <h3>The Nyamekye Initiative — Web Platform</h3>
+          <p>A landing site for mental health conversations: resources, stories,
+            and a space encouraging people to reach out and seek help.</p>
+          <div class="project-stack">
+            <span>HTML</span><span>CSS</span><span>JavaScript</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="image-slot project-img" data-label="Add screenshot — images/project-2.jpg">
+          <img src="weather.PNG" alt="Project two preview" onerror="this.style.display='none'; this.parentElement.classList.add('img-missing')">
+        </div>
+        <div class="project-body">
+          <span class="project-tag">Weather App</span>
+          <h3>Weather App</h3>
+          <p>A responsive weather app built with HTML, CSS, and JavaScript.</p>
+          <div class="project-stack">
+            <span>HTML</span><span>CSS</span><span>JavaScript</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="image-slot project-img" data-label="Add screenshot — images/project-3.jpg">
+          <img src="green.PNG" alt="Project three preview" onerror="this.style.display='none'; this.parentElement.classList.add('img-missing')">
+        </div>
+        <div class="project-body">
+          <span class="project-tag">Environment</span>
+
+<h3>Green North Climate Tracker</h3>
+<p>An interactive platform promoting climate action and environmental awareness in Ghana.</p>
+
+          <div class="project-stack">
+            <span>HTML</span><span>CSS</span><span>JavaScript</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ JOURNEY / LEADERSHIP ============ -->
+<section id="journey" class="container journey-section">
+  <div class="section-head">
+    <span class="eyebrow dark">Off the Record</span>
+    <h2 class="section-title">Leadership &amp; Community</h2>
+  </div>
+
+  <div class="journey-grid">
+    <div class="journey-highlight">
+      <div class="award-stamp"><span>Awarded</span></div>
+      <h3>Vice Chancellor's Award</h3>
+      <p>Led <strong>Group 63</strong> in Beboano, Bono East Region, on community
+        repairs and sanitation-focused proposal work — recognized with the
+        Vice Chancellor's Award for the team's impact.</p>
+    </div>
+
+    <ul class="role-list">
+      <li>
+        <i class="fa-solid fa-pen-nib"></i>
+        <div><strong>Student Journalist</strong><span>Radio Grin 94.7 MHz, UDS Nyankpala</span></div>
+      </li>
+      <li>
+        <i class="fa-solid fa-user-tie"></i>
+        <div><strong>Student Manager</strong><span>Radio Grin</span></div>
+      </li>
+      <li>
+        <i class="fa-solid fa-hands-holding-child"></i>
+        <div><strong>Stewardship Director</strong><span>GNAAS, UDS Nyankpala Campus</span></div>
+      </li>
+      <li>
+        <i class="fa-solid fa-code-branch"></i>
+        <div><strong>Member</strong><span>Computer Science Society, UDS Chapter</span></div>
+      </li>
+    </ul>
+  </div>
+
+  <p class="journey-footer">Beyond the code: youth, church, and media programs
+    that keep me working with people, not just pixels — building toward
+    software development, cybersecurity, AI, and tech for social impact.</p>
+</section>
+
+<div class="torn-divider torn-divider--up" aria-hidden="true"></div>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact" class="contact-section">
+  <div class="container">
+    <div class="section-head light">
+      <span class="eyebrow">Send a Tip</span>
+      <h2 class="section-title light">Let's Talk</h2>
+      <p class="section-sub light">Media inquiry, dev project, or a mental health
+        initiative — my inbox is always open.</p>
+    </div>
+
+    <div class="contact-wrapper">
+      <form id="contact-form" novalidate>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required>
+          </div>
+          <div class="form-field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+          </div>
+        </div>
+        <div class="form-field">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" placeholder="What's this about?">
+        </div>
+        <div class="form-field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="How can we work together?" required></textarea>
+        </div>
+        <button type="submit" class="btn primary full">
+          <span>Send Message</span> <i class="fa-solid fa-paper-plane"></i>
+        </button>
+        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+      </form>
+
+      <div class="contact-side">
+        <div class="contact-card">
+          <i class="fa-solid fa-envelope"></i>
+          <div>
+            <span>Email</span>
+            <a href="mailto:elvisnyamekye419@gmail.com">elvisnyamekye419@gmail.com</a>
+          </div>
+        </div>
+        <div class="contact-card">
+          <i class="fa-solid fa-location-dot"></i>
+          <div>
+            <span>Based in</span>
+            <a>Nyankpala, Ghana</a>
+          </div>
+        </div>
+        <div class="contact-card">
+          <i class="fa-solid fa-newspaper"></i>
+          <div>
+            <span>Telephone</span>
+            <a>0544597981</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="social-links">
+    <a href="https://www.linkedin.com/in/elvis-nyamekye-360402294?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    <a href="https://github.com/elvisnyamekye419-arch" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+    
+	</div>
+    
+  <p>&copy; 2026 Elvis Nyamekye. Still learning. Still building. Still becoming. 🚀</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

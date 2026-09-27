@@ -159,7 +159,10 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: var(--ink);
+  background:
+    linear-gradient(180deg, rgba(28,26,22,0.88) 0%, rgba(28,26,22,0.94) 55%, var(--ink) 100%),
+    url('https://images.unsplash.com/photo-1509217601088-8610fed0fc44?fm=jpg&q=80&w=2400&auto=format&fit=crop')
+      center 35% / cover no-repeat;
   color: var(--text-light);
   overflow: hidden;
   padding: 140px 6% 100px;
@@ -215,6 +218,14 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
   letter-spacing: -0.01em;
   margin: 20px 0 18px;
   color: var(--text-light);
+}
+
+.hero-greeting {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  color: var(--text-light-muted);
+  margin-top: 8px;
 }
 
 .hero-role {
@@ -603,6 +614,36 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 .footer p { font-family: var(--font-display); font-style: italic; font-size: 0.92rem; }
 
 /* =========================================================
+   BACK TO TOP
+   ========================================================= */
+.back-to-top {
+  position: fixed;
+  left: 28px;
+  bottom: 28px;
+  z-index: 900;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--red);
+  color: #fff;
+  font-size: 1.05rem;
+  box-shadow: 0 10px 26px rgba(178,58,46,0.32);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: opacity 0.3s ease, transform 0.3s ease, background 0.25s ease, visibility 0.3s;
+}
+.back-to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.back-to-top:hover { background: #963026; transform: translateY(-3px); }
+
+/* =========================================================
    RESPONSIVE
    ========================================================= */
 @media (max-width: 860px) {
@@ -628,4 +669,5 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
   .container { padding: 90px 6%; }
   .form-row { grid-template-columns: 1fr; }
   .press-stamp { top: 8%; right: 6%; font-size: 0.65rem; padding: 6px 10px; }
+  .back-to-top { left: 18px; bottom: 18px; width: 42px; height: 42px; font-size: 0.95rem; }
 }

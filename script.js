@@ -132,29 +132,29 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ---------- Contact form - WhatsApp ---------- */
-const form = document.getElementById('contact-form');
-const status = document.getElementById('formStatus');
+  const form = document.getElementById('contact-form');
+  const status = document.getElementById('formStatus');
 
-if (form && status) {
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
+  if (form && status) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
 
-    if (!form.checkValidity()) {
-      status.textContent = 'Please fill in your name, email, and message.';
-      status.style.color = '#B23A2E';
-      return;
-    }
+      if (!form.checkValidity()) {
+        status.textContent = 'Please fill in your name, email, and message.';
+        status.style.color = '#B23A2E';
+        return;
+      }
 
-    const name = form.querySelector('#name').value.trim();
-    const email = form.querySelector('#email').value.trim();
-    const subject = form.querySelector('#subject').value.trim();
-    const message = form.querySelector('#message').value.trim();
+      const name = form.querySelector('#name').value.trim();
+      const email = form.querySelector('#email').value.trim();
+      const subject = form.querySelector('#subject').value.trim();
+      const message = form.querySelector('#message').value.trim();
 
-    // Your WhatsApp number
-    const phone = '233544597981';
+      // Your WhatsApp number
+      const phone = '233544597981';
 
-    // Message that will appear in WhatsApp
-    const whatsappMessage = `Hello Elvis,
+      // Message that will appear in WhatsApp
+      const whatsappMessage = `Hello Elvis,
 
 Name: ${name}
 Email: ${email}
@@ -163,27 +163,29 @@ Subject: ${subject || 'No subject'}
 Message:
 ${message}`;
 
-    // Create WhatsApp link
-    const whatsappURL = `https://wa.me/${phone}?text=${encodeURIComponent(whatsappMessage)}`;
+      // Create WhatsApp link
+      const whatsappURL = `https://wa.me/${phone}?text=${encodeURIComponent(whatsappMessage)}`;
 
-    // Open WhatsApp
-    window.open(whatsappURL, '_blank');
+      // Open WhatsApp
+      window.open(whatsappURL, '_blank');
 
-    status.style.color = '#74886B';
-    status.textContent = `Thanks, ${name}! Opening WhatsApp...`;
+      status.style.color = '#74886B';
+      status.textContent = `Thanks, ${name}! Opening WhatsApp...`;
 
-    form.reset();
-  });
-}
+      form.reset();
+    });
+  }
 
-/* Small extra keyframes/styles that pair with the JS-driven
-   reveal and stamp interactions above. */
-const styleTag = document.createElement('style');
-styleTag.textContent = `
-  .reveal-init { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
-  .reveal-in { opacity: 1; transform: translateY(0); }
+  /* Small extra keyframes/styles that pair with the JS-driven
+     reveal and stamp interactions above. */
+  const styleTag = document.createElement('style');
+  styleTag.textContent = `
+    .reveal-init { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal-in { opacity: 1; transform: translateY(0); }
 
-  .stamp-init { opacity: 0; transform: rotate(-6deg) scale(1.8); }
-  .stamp-in { opacity: 1; transform: rotate(-6deg) scale(1); transition: opacity 0.35s ease, transform 0.35s cubic-bezier(.2,1.4,.4,1); }
-`;
-document.head.appendChild(styleTag);
+    .stamp-init { opacity: 0; transform: rotate(-6deg) scale(1.8); }
+    .stamp-in { opacity: 1; transform: rotate(-6deg) scale(1); transition: opacity 0.35s ease, transform 0.35s cubic-bezier(.2,1.4,.4,1); }
+  `;
+  document.head.appendChild(styleTag);
+
+}); // <-- this closing "});" was missing — it closes the DOMContentLoaded callback + addEventListener call

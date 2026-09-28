@@ -6,23 +6,61 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  /* ---------- Mobile nav toggle ---------- */
+  /* ---------- Mobile nav (full-screen menu) ---------- */
+  const navbarEl = document.getElementById('navbar');
   const navToggle = document.getElementById('navToggle');
   const navLinks = document.getElementById('navLinks');
 
+  function setMenu(open) {
+    if (!navToggle || !navLinks) return;
+    navLinks.classList.toggle('is-open', open);
+    navToggle.classList.toggle('is-open', open);
+    navbarEl && navbarEl.classList.toggle('menu-open', open);
+    document.body.classList.toggle('menu-open', open);
+    navToggle.setAttribute('aria-expanded', String(open));
+    navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  }
+
   if (navToggle && navLinks) {
     navToggle.addEventListener('click', () => {
-      const isOpen = navLinks.classList.toggle('is-open');
-      navToggle.setAttribute('aria-expanded', isOpen);
+      setMenu(!navLinks.classList.contains('is-open'));
     });
 
+    // close after choosing a link
     navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.classList.remove('is-open');
-        navToggle.setAttribute('aria-expanded', 'false');
-      });
+      link.addEventListener('click', () => setMenu(false));
+    });
+
+    // close with Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') setMenu(false);
+    });
+
+    // reset if the screen grows to desktop size (e.g. rotating a tablet)
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 860) setMenu(false);
     });
   }
+
+  /* ---------- Active nav link while scrolling (scroll-spy) ---------- */
+  const spyLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+  const spySections = [...spyLinks]
+    .map(a => document.querySelector(a.getAttribute('href')))
+    .filter(Boolean);
+
+  function setActiveLink(id) {
+    spyLinks.forEach(a => a.classList.toggle('is-active', a.getAttribute('href') === '#' + id));
+  }
+
+  if ('IntersectionObserver' in window && spySections.length) {
+    const spy = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) setActiveLink(entry.target.id);
+      });
+    }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+    spySections.forEach(sec => spy.observe(sec));
+  }
+  setActiveLink('hero');
 
   /* ---------- Hero role cycler (typewriter) ---------- */
   const roles = [
